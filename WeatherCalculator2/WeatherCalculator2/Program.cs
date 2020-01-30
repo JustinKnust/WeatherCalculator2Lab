@@ -22,12 +22,16 @@ namespace WeatherCalculator2
 
             // Get the windspeed from the user
             Console.WriteLine("Enter the wind speed");
+            string enteredtemp = Console.ReadLine();
 
-            input = Console.ReadLine();
+            windSpeed = int.Parse(input)
 
-            windSpeed = int.Parse(input);
+            ; double windchill = 35.74
+                + (0.6125 * temperature)
+                - 35.75 * Math.Pow(windSpeed, 0.16)
+             + 0.4275 * temperature * Math.Pow(windSpeed, 0.16);
 
-            // Calculate the wind chill
+            Console.WriteLine("The wind chill is " + windchill);
 
             windChill = 35.74 + (0.6125 * temperature) - 35.75 * Math.Pow(windSpeed, 0.16) + 0.4275 * temperature * Math.Pow(windSpeed, 0.16);
 
